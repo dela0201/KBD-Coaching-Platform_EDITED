@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>KBD | Login</title>
+
+    <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon.png?v=2"
+>
+
+    <link
+        rel="stylesheet"
+        href="../CSS/style.css"
+    >
+
+<script src="../js/terms-guard.js"></script>
+
+    <script
+        src="../js/login.js"
+        defer
+    ></script>
+
+
+
+</head>
+
+<body class="login-body">
+
+    <main class="login-page">
+
+        <!-- BRAND PANEL -->
+
+        <section
+            class="login-brand-panel"
+            aria-labelledby="login-brand-heading"
+        >
+
+            <img
+                src="../images/kbd-logo.png"
+                alt="KBD logo"
+                class="login-logo"
+            >
+
+            <div class="login-brand-content">
+
+                <p class="eyebrow">
+                    KNOWING · BEING · DOING
+                </p>
+
+                <h1 id="login-brand-heading">
+                    Turn understanding into sustainable execution.
+                </h1>
+
+                <p>
+                    Access your coaching programmes,
+                    actions, sessions, assessments and
+                    transformation progress.
+                </p>
+
+            </div>
+
+            <p class="login-brand-footer">
+                KNOWING → BEING → DOING → RESULTS
+            </p>
+
+        </section>
+
+        <!-- LOGIN FORM -->
+
+        <section
+            class="login-form-panel"
+            aria-labelledby="login-title"
+        >
+
+            <form
+                id="login-form"
+                class="login-form"
+            >
+
+                <p
+                    id="login-eyebrow"
+                    class="eyebrow"
+                >
+                    KBD COACHING PLATFORM
+                </p>
+
+                <h2 id="login-title">
+                    Welcome back
+                </h2>
+
+                <p
+                    id="login-introduction"
+                    class="login-introduction"
+                >
+                    Sign in to continue to your
+                    coaching workspace.
+                </p>
+
+                <div
+                    id="login-role-label"
+                    class="login-role-label"
+                    aria-live="polite"
+                ></div>
+
+                <div class="form-group">
+
+                    <label for="login-email">
+                        Email address
+                    </label>
+
+                    <input
+                        id="login-email"
+                        name="Email"
+                        type="email"
+                        autocomplete="email"
+                        autocapitalize="none"
+                        spellcheck="false"
+                        maxlength="254"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="login-password">
+                        Password
+                    </label>
+
+                    <input
+                        id="login-password"
+                        name="Password"
+                        type="password"
+                        autocomplete="current-password"
+                        minlength="8"
+                        required
+                    >
+
+                </div>
+
+                <div
+                    id="login-message"
+                    class="form-message"
+                    role="alert"
+                    aria-live="polite"
+                ></div>
+
+                <button
+                    id="login-button"
+                    class="primary-button login-button"
+                    type="submit"
+                >
+                    Sign In
+                </button>
+
+                <div
+                    id="participant-login-options"
+                    class="authentication-links"
+                    hidden
+                >
+
+                <div
+    id="coach-login-options"
+    class="authentication-links"
+    hidden
+>
+
+    <p>
+        Have you received a Coach invitation?
+
+        <span>
+            Open the activation link supplied by
+            your KBD administrator.
+        </span>
+    </p>
+
+    <p>
+        Need Coach access?
+
+        <span>
+            Ask a KBD administrator to invite you.
+        </span>
+    </p>
+
+</div>
+
+                    <p>
+                        New to KBD?
+
+                        <a href="register.html">
+                            Create Participant Account
+                        </a>
+                    </p>
+
+                    <a href="password-request.html">
+                        Request a temporary password
+                    </a>
+
+                </div>
+
+                <div class="authentication-links">
+
+                    <a href="verification.html">
+                        ← Choose another account type
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

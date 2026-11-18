@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>KBD | Participant Registration</title>
+
+    <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon.png?v=2"
+>
+
+    <link
+        rel="stylesheet"
+        href="../CSS/style.css"
+    >
+
+<script src="../js/terms-guard.js"></script>
+
+</head>
+
+<body class="login-body">
+
+    <main class="login-page">
+
+        <!-- BRAND PANEL -->
+
+        <section class="login-brand-panel">
+
+            <img
+                src="../images/kbd-logo.png"
+                alt="KBD"
+                class="login-logo"
+            >
+
+            <div class="login-brand-content">
+
+                <p class="eyebrow">
+                    KNOWING · BEING · DOING
+                </p>
+
+                <h1>
+                    Begin your development journey.
+                </h1>
+
+                <p>
+                    Create your Participant account to
+                    access coaching programmes, sessions,
+                    actions, assessments and learning
+                    resources.
+                </p>
+
+            </div>
+
+            <p class="login-brand-footer">
+                KNOWING → BEING → DOING → RESULTS
+            </p>
+
+        </section>
+
+        <!-- REGISTRATION FORM -->
+
+        <section class="login-form-panel">
+
+            <form
+                id="registration-form"
+                class="login-form"
+            >
+                <p class="eyebrow">
+                    PARTICIPANT REGISTRATION
+                </p>
+
+                <h2>
+                    Create your account
+                </h2>
+
+                <p class="login-introduction">
+                    Enter your details to register as a
+                    KBD coaching Participant.
+                </p>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="register-first-name">
+                            First name
+                        </label>
+
+                        <input
+                            id="register-first-name"
+                            name="FirstName"
+                            type="text"
+                            autocomplete="given-name"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="register-last-name">
+                            Last name
+                        </label>
+
+                        <input
+                            id="register-last-name"
+                            name="LastName"
+                            type="text"
+                            autocomplete="family-name"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group form-group-full">
+
+                        <label for="register-email">
+                            Email address
+                        </label>
+
+                        <input
+                            id="register-email"
+                            name="Email"
+                            type="email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="register-password">
+                            Password
+                        </label>
+
+                        <input
+                            id="register-password"
+                            name="Password"
+                            type="password"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <small class="form-help">
+                            Use at least 8 characters.
+                        </small>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="register-confirm-password">
+                            Confirm password
+                        </label>
+
+                        <input
+                            id="register-confirm-password"
+                            name="ConfirmPassword"
+                            type="password"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="registration-message"
+                    class="form-message"
+                    aria-live="polite"
+                ></div>
+
+                <button
+                    id="registration-button"
+                    class="primary-button login-button"
+                    type="submit"
+                >
+                    Create Account
+                </button>
+
+                <div class="authentication-links">
+
+                    <p>
+                        Already registered?
+
+                        <a href="login.html">
+                            Sign in
+                        </a>
+                    </p>
+
+                    <a href="verification.html">
+                        ← Choose another account type
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="../js/register.js"></script>
+
+</body>
+
+</html>

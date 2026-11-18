@@ -1,0 +1,61 @@
+{
+  "name": "kbd-coaching-platform-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend API for the KBD Coaching Platform",
+  "main": "server.js",
+  "scripts": {
+    "prestart": "node initDatabase.js && node migrateUserAccountStatus.js && node migrateAuditLogs.js && node migrateOptionalProgrammeOrganisation.js && node migrateProgrammeFiles.js && node migrateAuthenticationRecovery.js && node migrateCoachInvitations.js && node createAdminAccounts.js",
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "init-db": "node initDatabase.js",
+    "seed-db": "node seedDatabase.js",
+    "migrate:corporate": "node migrateCorporateOrganisation.js",
+    "migrate:auth-recovery": "node migrateAuthenticationRecovery.js",
+    "migrate:coach-invitations": "node migrateCoachInvitations.js",
+    "migrate:priority-features": "node migratePriorityFeatures.js",
+    "migrate:programme-files": "node migrateProgrammeFiles.js",
+    "migrate:programme-organisation": "node migrateOptionalProgrammeOrganisation.js",
+    "check-db": "node checkDatabase.js",
+    "check-server": "node --check server.js",
+    "create-coach": "node createInitialCoach.js",
+    "create-test-accounts": "node createTestAccounts.js",
+    "create-admins": "node createAdminAccounts.js",
+    "backup-db": "node backupDatabase.js",
+    "migrate:user-status": "node migrateUserAccountStatus.js",
+    "migrate:audit-logs": "node migrateAuditLogs.js",
+    "test": "node --test test/fresh-database.test.js",
+"test:smoke": "node --test test/api-smoke.test.js",
+"test:roles": "node --test test/role-access.test.js",
+"test:api": "node --test test/api-smoke.test.js test/role-access.test.js",
+"test:fresh-db": "node --test test/fresh-database.test.js"
+  },
+  "engines": {
+  "node": "20.x"
+},
+  "keywords": [
+    "kbd",
+    "coaching",
+    "express",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-sqlite3": "^0.9.18",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.3",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "multer": "^2.5.0",
+    "sqlite3": "^6.0.1"
+  },
+  "overrides": {
+    "connect-sqlite3": {
+      "sqlite3": "6.0.1"
+    }
+  }
+}

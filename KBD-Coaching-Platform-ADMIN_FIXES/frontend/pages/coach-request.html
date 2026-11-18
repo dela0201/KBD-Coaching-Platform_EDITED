@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBD | Request Coach Access</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon.png?v=2"
+>
+    <link rel="stylesheet" href="../CSS/style.css">
+
+<script src="../js/terms-guard.js"></script>
+
+</head>
+
+<body class="login-body">
+    <main class="login-page">
+
+        <section class="login-brand-panel" aria-labelledby="brand-heading">
+            <img
+                src="../images/kbd-logo.png"
+                alt="KBD logo"
+                class="login-logo"
+            >
+
+            <div class="login-brand-content">
+                <p class="eyebrow">KNOWING · BEING · DOING</p>
+
+                <h1 id="brand-heading">
+                    Apply to become a KBD Coach.
+                </h1>
+
+                <p>
+                    Submit your details for review by a KBD administrator.
+                    Approved applicants will receive a secure invitation.
+                </p>
+            </div>
+
+            <p class="login-brand-footer">
+                KNOWING → BEING → DOING → RESULTS
+            </p>
+        </section>
+
+        <section class="login-form-panel" aria-labelledby="request-heading">
+            <form id="coach-request-form" class="login-form">
+                <p class="eyebrow">COACH ACCESS</p>
+
+                <h2 id="request-heading">
+                    Request Coach Access
+                </h2>
+
+                <p class="login-introduction">
+                    Complete the form below. An administrator will review
+                    your request before Coach access is granted.
+                </p>
+
+                <div class="form-group">
+                    <label for="coach-request-first-name">First name</label>
+                    <input
+                        id="coach-request-first-name"
+                        name="FirstName"
+                        type="text"
+                        maxlength="100"
+                        autocomplete="given-name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="coach-request-last-name">Last name</label>
+                    <input
+                        id="coach-request-last-name"
+                        name="LastName"
+                        type="text"
+                        maxlength="100"
+                        autocomplete="family-name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="coach-request-email">Email address</label>
+                    <input
+                        id="coach-request-email"
+                        name="Email"
+                        type="email"
+                        maxlength="254"
+                        autocomplete="email"
+                        autocapitalize="none"
+                        spellcheck="false"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="coach-request-reason">
+                        Why would you like to become a Coach?
+                    </label>
+
+                    <textarea
+                        id="coach-request-reason"
+                        name="Reason"
+                        rows="5"
+                        maxlength="1000"
+                        required
+                    ></textarea>
+
+                    <small class="form-help">
+                        Briefly describe your coaching background or interest.
+                    </small>
+                </div>
+
+                <div
+                    id="coach-request-message"
+                    class="form-message"
+                    aria-live="polite"
+                ></div>
+
+                <button
+                    id="coach-request-button"
+                    class="primary-button login-button"
+                    type="submit"
+                >
+                    Submit Request
+                </button>
+
+                <div class="authentication-links">
+                    <a href="verification.html">
+                        ← Return to account selection
+                    </a>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="../js/coach-request.js"></script>
+</body>
+</html>

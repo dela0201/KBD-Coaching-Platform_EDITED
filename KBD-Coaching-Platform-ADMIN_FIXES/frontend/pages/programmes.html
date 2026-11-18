@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>KBD | Programmes</title>
+
+<link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon.png?v=2"
+>
+
+    <link
+        rel="stylesheet"
+        href="../CSS/style.css"
+    >
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <a
+                href="dashboard.html"
+                class="brand"
+                aria-label="KBD Dashboard"
+            >
+                <img
+                    src="../images/kbd-logo.png"
+                    alt="KBD"
+                    class="brand-logo"
+                >
+            </a>
+
+            <nav
+                class="navigation"
+                aria-label="Main navigation"
+            >
+                <a
+                    href="dashboard.html"
+                    class="nav-item"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="programmes.html"
+                    class="nav-item active"
+                    aria-current="page"
+                >
+                    Programmes
+                </a>
+
+                <a
+                    href="sessions.html"
+                    class="nav-item"
+                >
+                    Sessions
+                </a>
+
+                <a
+                    href="participants.html"
+                    class="nav-item"
+                >
+                    Participants
+                </a>
+
+                <a
+                    href="password-requests.html"
+                    class="nav-item"
+                    data-roles="Admin, Coach"
+                    hidden
+                >
+                    Password Requests
+                </a>
+
+                <a
+                    href="actions.html"
+                    class="nav-item"
+                >
+                    Actions
+                </a>
+
+                <a
+                    href="assessments.html"
+                    class="nav-item"
+                >
+                    Assessments
+                </a>
+
+                <a
+                    href="materials.html"
+                    class="nav-item"
+                >
+                    Learning Materials
+                </a>
+
+                <a
+                    href="reports.html"
+                    class="nav-item"
+                >
+                    Reports
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="settings.html"
+                    class="nav-item"
+                >
+                    Settings
+                </a>
+
+                <a
+                    href="#"
+                    class="nav-item"
+                    data-action="logout"
+                >
+                    Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <p class="eyebrow">
+                        KBD COACHING PLATFORM
+                    </p>
+
+                    <h1>
+                        Programmes
+                    </h1>
+                </div>
+
+                <div class="user-area">
+
+                    <div
+                        class="user-avatar"
+                        aria-hidden="true"
+                    >
+                        D
+                    </div>
+
+                    <div>
+                        <strong>
+                            Dela
+                        </strong>
+
+                        <span>
+                            Coach
+                        </span>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <section class="dashboard">
+
+                <!-- INTRODUCTION -->
+
+                <div class="welcome">
+
+                    <p class="eyebrow">
+                        COACHING PROGRAMMES
+                    </p>
+
+                    <h2>
+                        Your Programmes
+                    </h2>
+
+                    <p>
+                        View and manage the coaching
+                        programmes currently assigned
+                        to you.
+                    </p>
+
+                </div>
+
+                <!-- CREATE PROGRAMME FORM -->
+
+                <div
+                    id="programme-form-panel"
+                    class="panel hidden"
+                    data-roles="Admin, Coach"
+                >
+                    <div class="panel-header">
+
+                        <div>
+                            <p class="eyebrow">
+                                CREATE PROGRAMME
+                            </p>
+
+                            <h3>
+                                New Coaching Programme
+                            </h3>
+                        </div>
+
+                        <button
+                            id="close-programme-form"
+                            class="secondary-button"
+                            type="button"
+                        >
+                            Cancel
+                        </button>
+
+                    </div>
+
+                    <form
+                        id="programme-form"
+                        enctype="multipart/form-data"
+                    >
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="programme-name">
+                                    Programme name
+                                </label>
+
+                                <input
+                                    id="programme-name"
+                                    name="ProgrammeName"
+                                    type="text"
+                                    autocomplete="off"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="programme-start-date">
+                                    Start date
+                                </label>
+
+                                <input
+                                    id="programme-start-date"
+                                    name="StartDate"
+                                    type="date"
+                                >
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="programme-end-date">
+                                    End date
+                                </label>
+
+                                <input
+                                    id="programme-end-date"
+                                    name="EndDate"
+                                    type="date"
+                                >
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="programme-status-input">
+                                    Status
+                                </label>
+
+                                <select
+                                    id="programme-status-input"
+                                    name="Status"
+                                    required
+                                >
+                                    <option value="Draft">
+                                        Draft
+                                    </option>
+
+                                    <option
+                                        value="Active"
+                                        selected
+                                    >
+                                        Active
+                                    </option>
+
+                                    <option value="Completed">
+                                        Completed
+                                    </option>
+
+                                    <option value="Archived">
+                                        Archived
+                                    </option>
+                                </select>
+
+                            </div>
+
+                            <div class="form-group form-group-full">
+
+                                <label for="programme-description">
+                                    Description
+                                </label>
+
+                                <textarea
+                                    id="programme-description"
+                                    name="Description"
+                                    rows="4"
+                                ></textarea>
+
+                            </div>
+
+                            <div class="form-group form-group-full">
+
+                                <label for="programme-file-input">
+                                    Programme documents
+                                </label>
+
+                                <div
+                                    id="programme-file-drop-zone"
+                                    class="file-drop-zone"
+                                    role="button"
+                                    tabindex="0"
+                                    aria-controls="programme-file-input"
+                                    aria-describedby="programme-file-help"
+                                >
+                                    <strong>
+                                        Drag and drop documents here
+                                    </strong>
+
+                                    <span>
+                                        or select documents from your device
+                                    </span>
+
+                                    <button
+                                        id="choose-programme-files"
+                                        class="secondary-button"
+                                        type="button"
+                                    >
+                                        Choose Documents
+                                    </button>
+                                </div>
+
+                                <input
+                                    id="programme-file-input"
+                                    class="file-input"
+                                    name="Files"
+                                    type="file"
+                                    accept=".pdf,.doc,.docx,.xls,.xlsx"
+                                    multiple
+                                >
+
+                                <small
+                                    id="programme-file-help"
+                                    class="form-help"
+                                >
+                                    PDF, Word and Excel documents are accepted. Maximum 10 MB per file.
+                                </small>
+
+                                <div
+                                    id="programme-selected-files"
+                                    class="selected-files"
+                                    aria-live="polite"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            id="programme-form-message"
+                            class="form-message"
+                            aria-live="polite"
+                        ></div>
+
+                        <button
+                            class="primary-button"
+                            type="submit"
+                        >
+                            Create Programme
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- PAGE CONTROLS -->
+
+                <div
+                    class="programme-page-controls"
+                    data-roles="Admin, Coach"
+                >
+                    <button
+                        id="show-programme-form"
+                        class="primary-button"
+                        type="button"
+                    >
+                        + New Programme
+                    </button>
+                </div>
+
+                <!-- PROGRAMME LIST -->
+
+                <div
+                    id="programmes-container"
+                    class="stats-grid"
+                    aria-live="polite"
+                >
+                    <p>
+                        Loading programmes...
+                    </p>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="../js/terms-guard.js"></script>
+<script src="../js/auth.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/programmes.js"></script>
+
+</body>
+
+</html>
