@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KBD | Messages</title>
+
+    <!-- Global styling -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Shared components -->
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <!-- Messages styling -->
+    <link rel="stylesheet" href="../css/messages.css">
+<link rel="stylesheet" href="../css/integration.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        
+<div id="sidebar-container"></div>
+
+
+        <div class="main-content">
+
+            <!-- Navbar -->
+            
+<div id="navbar-container"></div>
+
+
+            <main class="messages-page">
+
+                <!-- INBOX VIEW -->
+                <section id="messages-inbox" class="messages-inbox">
+
+                    <div class="messages-header">
+                        <div>
+                            <h2>Messages</h2>
+                            <p>Communicate with your participants.</p>
+                        </div>
+                    </div>
+
+                    <!-- Participant Search -->
+                    <div class="message-search">
+                        <span>⌕</span>
+                        <input
+                            type="search"
+                            id="message-search"
+                            placeholder="Search participants..."
+                        >
+                    </div>
+
+                    <!-- Conversation List -->
+                    <div class="conversation-list"
+                         id="conversation-list">
+
+                        <!-- Conversations will be displayed here -->
+
+                    </div>
+
+                    <!-- Empty State -->
+                    <div class="messages-empty-state"
+                         id="messages-empty-state">
+
+                        <div class="empty-icon">✉</div>
+
+                        <h3>No conversations yet</h3>
+
+                        <p>
+                            Search for a participant to start a conversation.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- CHAT VIEW -->
+                <section id="messages-chat" class="messages-chat hidden">
+
+                    <!-- Chat Header -->
+                    <header class="chat-header">
+
+                        <button
+                            type="button"
+                            id="back-to-inbox"
+                            class="back-to-inbox"
+                            aria-label="Back to conversations">
+                            ←
+                        </button>
+
+                        <div class="chat-participant-avatar"
+                             id="chat-participant-avatar">
+                            --
+                        </div>
+
+                        <div class="chat-participant-details">
+
+                            <h3 id="chat-participant-name">
+                                Participant Name
+                            </h3>
+
+                            <p>Participant</p>
+
+                        </div>
+
+                    </header>
+
+
+                    <!-- Conversation Messages -->
+                    <div class="chat-messages"
+                         id="chat-messages">
+
+                        <!-- Messages will appear here -->
+
+                    </div>
+
+
+                    <!-- Message Composer -->
+                    <form class="message-composer"
+                          id="message-form">
+
+                        <input
+                            type="file"
+                            id="message-file"
+                            hidden
+                        >
+
+                        <button
+                            type="button"
+                            id="attach-file-btn"
+                            class="composer-action"
+                            aria-label="Attach file"
+                            title="Attach file">
+                            📎
+                        </button>
+
+                        <textarea
+                            id="message-input"
+                            placeholder="Type your message..."
+                            rows="1">
+                        </textarea>
+
+                        <button
+                            type="button"
+                            id="record-voice-btn"
+                            class="composer-action"
+                            aria-label="Record voice note"
+                            title="Record voice note">
+                            🎙
+                        </button>
+
+                        <button
+                            type="submit"
+                            id="send-message-btn"
+                            class="send-message-btn"
+                            aria-label="Send message">
+                            ➤
+                        </button>
+
+                    </form>
+
+                    <!-- Voice Recording Status -->
+                    <div id="recording-status"
+                         class="recording-status hidden">
+                        Recording voice note...
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- Layout -->
+    <script type="module" src="../js/layout.js"></script>
+
+    <!-- Messages functionality -->
+    <script type="module" src="../js/messages.js"></script>
+
+</body>
+</html>

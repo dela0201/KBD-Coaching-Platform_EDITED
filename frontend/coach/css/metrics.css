@@ -1,0 +1,837 @@
+
+/* =================================
+   KBD METRICS & PROGRESS
+================================= */
+
+.metrics-page {
+    width: 100%;
+    padding: 30px;
+    color: var(--kbd-text);
+}
+
+
+/* =================================
+   PAGE HEADING
+================================= */
+
+.metrics-page .page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.metrics-page .page-heading h1 {
+    color: var(--kbd-navy);
+    font-size: 26px;
+    margin-bottom: 7px;
+}
+
+.metrics-page .page-heading p {
+    color: var(--kbd-muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =================================
+   BUTTONS
+================================= */
+
+.metrics-page .primary-btn {
+    background: var(--kbd-green);
+    color: #ffffff;
+    border: 1px solid var(--kbd-green);
+    padding: 12px 18px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.metrics-page .primary-btn:hover {
+    background: #009b6c;
+    border-color: #009b6c;
+}
+
+.metrics-page .primary-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.metrics-page .secondary-btn {
+    background: #ffffff;
+    color: var(--kbd-text);
+    border: 1px solid var(--kbd-border);
+    padding: 11px 17px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.metrics-page .secondary-btn:hover {
+    background: #f5f6f8;
+}
+
+.metrics-page .close-btn {
+    width: 34px;
+    height: 34px;
+    background: #f5f6f8;
+    border: none;
+    color: var(--kbd-muted);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.metrics-page .close-btn:hover {
+    background: #edf2f8;
+    color: var(--kbd-navy);
+}
+
+
+/* =================================
+   STATISTICS
+================================= */
+
+.metric-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.metric-stats .stat-card {
+    background: var(--kbd-panel);
+    border: 1px solid var(--kbd-border);
+    border-radius: 4px;
+    padding: 22px;
+    min-height: 112px;
+    transition: border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.metric-stats .stat-card:hover {
+    border-color: #cbd8d2;
+    transform: translateY(-2px);
+}
+
+.metric-stats .stat-card-info span {
+    color: var(--kbd-muted);
+    font-size: 13px;
+}
+
+.metric-stats .stat-card-info h2 {
+    color: var(--kbd-navy);
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+
+/* =================================
+   AUTOMATIC INSIGHTS PANEL
+================================= */
+
+.automatic-insights-panel {
+    background: var(--kbd-panel);
+    border: 1px solid var(--kbd-border);
+    border-radius: 4px;
+    padding: 25px;
+    margin-bottom: 26px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    color: var(--kbd-navy);
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.section-heading p {
+    color: var(--kbd-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.automatic-label {
+    display: inline-block;
+    padding: 7px 10px;
+    background: var(--kbd-soft-green);
+    color: #07865f;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.insight-card {
+    padding: 19px;
+    border: 1px solid var(--kbd-border);
+    background: #ffffff;
+    min-width: 0;
+}
+
+.insight-card > span {
+    display: block;
+    color: var(--kbd-muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.insight-card h3 {
+    color: var(--kbd-navy);
+    font-size: 26px;
+    font-weight: 700;
+    margin: 13px 0 8px;
+}
+
+.insight-card p {
+    color: var(--kbd-muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.insights-note {
+    margin-top: 19px;
+    padding-top: 15px;
+    border-top: 1px solid var(--kbd-border);
+    color: var(--kbd-muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =================================
+   GOAL FORM
+================================= */
+
+.metric-form-panel {
+    background: var(--kbd-panel);
+    border: 1px solid var(--kbd-border);
+    border-radius: 4px;
+    padding: 26px;
+    margin-bottom: 26px;
+}
+
+/* Respect HTML hidden attribute */
+.metric-form-panel[hidden],
+.goal-history-panel[hidden] {
+    display: none !important;
+}
+
+.metric-form-panel .form-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 26px;
+}
+
+.metric-form-panel .form-heading h2 {
+    color: var(--kbd-navy);
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.metric-form-panel .form-heading p {
+    color: var(--kbd-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =================================
+   FORM GRID
+================================= */
+
+.metric-form-panel .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.metric-form-panel .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.metric-form-panel .form-group label {
+    color: var(--kbd-text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.metric-form-panel .form-group input,
+.metric-form-panel .form-group select,
+.metric-form-panel .form-group textarea {
+    width: 100%;
+    min-height: 43px;
+    padding: 12px;
+    border: 1px solid var(--kbd-border);
+    border-radius: 4px;
+    background: #ffffff;
+    color: var(--kbd-text);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.metric-form-panel .form-group input:focus,
+.metric-form-panel .form-group select:focus,
+.metric-form-panel .form-group textarea:focus {
+    border-color: var(--kbd-green);
+    box-shadow: 0 0 0 2px rgba(1, 175, 122, 0.08);
+}
+
+.metric-form-panel .form-group input::placeholder,
+.metric-form-panel .form-group textarea::placeholder {
+    color: #9aa3af;
+}
+
+.metric-form-panel .form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.metric-form-panel .form-group small {
+    color: var(--kbd-muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.metric-form-panel .full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* =================================
+   FORM ACTIONS
+================================= */
+
+.metric-form-panel .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.metric-form-panel .form-message {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =================================
+   GOALS PANEL
+================================= */
+
+.metrics-panel {
+    background: var(--kbd-panel);
+    border: 1px solid var(--kbd-border);
+    border-radius: 4px;
+    padding: 25px;
+    margin-bottom: 26px;
+}
+
+.metrics-panel .panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.metrics-panel .panel-heading h2 {
+    color: var(--kbd-navy);
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.metrics-panel .panel-heading p {
+    color: var(--kbd-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.metrics-panel .panel-heading > span {
+    color: var(--kbd-muted);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+
+/* =================================
+   SEARCH AND FILTERS
+================================= */
+
+.metrics-toolbar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+    align-items: center;
+}
+
+.metrics-toolbar .search-box {
+    flex: 1;
+    min-width: 180px;
+}
+
+.metrics-toolbar input,
+.metrics-toolbar select {
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 12px;
+    border: 1px solid var(--kbd-border);
+    border-radius: 4px;
+    background: #ffffff;
+    color: var(--kbd-text);
+    font-size: 13px;
+    outline: none;
+}
+
+.metrics-toolbar input:focus,
+.metrics-toolbar select:focus {
+    border-color: var(--kbd-green);
+}
+
+.metrics-toolbar .filter-box {
+    width: 190px;
+    flex-shrink: 0;
+}
+
+
+/* =================================
+   GOAL CARDS
+================================= */
+
+.goal-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.goal-card {
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid var(--kbd-border);
+    padding: 21px;
+    transition: border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.goal-card:hover {
+    border-color: #cbd8d2;
+    transform: translateY(-2px);
+}
+
+.goal-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.goal-card-title {
+    color: var(--kbd-navy);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.goal-card-participant {
+    margin-top: 6px;
+    color: var(--kbd-muted);
+    font-size: 12px;
+}
+
+.goal-category {
+    display: inline-block;
+    margin-top: 9px;
+    padding: 5px 8px;
+    background: var(--kbd-soft-blue);
+    color: #31547d;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.goal-status-badge {
+    display: inline-block;
+    padding: 6px 9px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.goal-status-badge.status-on-track {
+    background: var(--kbd-soft-green);
+    color: #07865f;
+}
+
+.goal-status-badge.status-needs-attention {
+    background: #fff5e6;
+    color: #99641c;
+}
+
+.goal-status-badge.status-achieved {
+    background: var(--kbd-soft-green);
+    color: #07865f;
+}
+
+.goal-status-badge.status-overdue {
+    background: #fff0ed;
+    color: #c45143;
+}
+
+
+/* =================================
+   GOAL MEASUREMENTS
+================================= */
+
+.goal-measurements {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding: 15px 0;
+    border-top: 1px solid var(--kbd-border);
+    border-bottom: 1px solid var(--kbd-border);
+}
+
+.goal-measurement {
+    min-width: 0;
+}
+
+.goal-measurement span {
+    display: block;
+    color: var(--kbd-muted);
+    font-size: 11px;
+    margin-bottom: 7px;
+}
+
+.goal-measurement strong {
+    display: block;
+    color: var(--kbd-navy);
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+
+/* =================================
+   GOAL PROGRESS
+================================= */
+
+.goal-progress-section {
+    margin-top: 17px;
+}
+
+.goal-progress-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 9px;
+}
+
+.goal-progress-heading span {
+    color: var(--kbd-muted);
+    font-size: 12px;
+}
+
+.goal-progress-heading strong {
+    color: var(--kbd-navy);
+    font-size: 14px;
+}
+
+.goal-progress-track {
+    width: 100%;
+    height: 9px;
+    background: #e8edf1;
+    overflow: hidden;
+}
+
+.goal-progress-fill {
+    height: 100%;
+    background: var(--kbd-green);
+    transition: width 0.3s ease;
+}
+
+.goal-progress-fill.progress-needs-attention {
+    background: #d99b3d;
+}
+
+.goal-progress-fill.progress-achieved {
+    background: var(--kbd-green);
+}
+
+.goal-progress-description {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 9px;
+    color: var(--kbd-muted);
+    font-size: 11px;
+}
+
+
+/* =================================
+   GOAL DESCRIPTION
+================================= */
+
+.goal-description {
+    margin-top: 15px;
+    color: var(--kbd-muted);
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+
+/* =================================
+   GOAL CARD ACTIONS
+================================= */
+
+.goal-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 19px;
+    padding-top: 15px;
+    border-top: 1px solid var(--kbd-border);
+}
+
+.goal-card-actions button {
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.goal-card-actions button:hover {
+    text-decoration: underline;
+}
+
+.goal-card-actions .update-goal-btn {
+    color: #07865f;
+}
+
+.goal-card-actions .history-goal-btn {
+    color: #31547d;
+}
+
+.goal-card-actions .edit-goal-btn {
+    color: var(--kbd-muted);
+}
+
+.goal-card-actions .delete-goal-btn {
+    color: #c45143;
+}
+
+
+/* =================================
+   PROGRESS HISTORY
+================================= */
+
+.goal-history-panel {
+    margin-top: 26px;
+}
+
+.metrics-panel .table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.metrics-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.metrics-table thead {
+    background: #f5f7f9;
+}
+
+.metrics-table th {
+    padding: 15px 12px;
+    color: var(--kbd-muted);
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--kbd-border);
+    white-space: nowrap;
+}
+
+.metrics-table td {
+    padding: 15px 12px;
+    color: var(--kbd-text);
+    font-size: 13px;
+    border-bottom: 1px solid var(--kbd-border);
+    vertical-align: middle;
+}
+
+.metrics-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =================================
+   EMPTY STATES
+================================= */
+
+.metrics-panel .empty-state {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.metrics-panel .empty-state h3 {
+    color: var(--kbd-navy);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.metrics-panel .empty-state p {
+    color: var(--kbd-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1100px) {
+
+    .metric-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .insights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .metrics-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .metrics-toolbar .search-box {
+        flex-basis: 100%;
+    }
+
+    .metrics-toolbar .filter-box {
+        flex: 1;
+        min-width: 150px;
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .metrics-page {
+        padding: 20px;
+    }
+
+    .metrics-page .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .metric-form-panel .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-form-panel .full-width {
+        grid-column: auto;
+    }
+
+    .goal-list {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .metrics-toolbar .search-box,
+    .metrics-toolbar .filter-box {
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .automatic-insights-panel,
+    .metrics-panel {
+        padding: 18px;
+    }
+
+    .section-heading,
+    .metrics-panel .panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .metric-form-panel {
+        padding: 18px;
+    }
+
+    .metric-form-panel .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .metric-form-panel .form-actions button {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .metric-stats,
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .goal-card {
+        padding: 16px;
+    }
+
+    .goal-card-header {
+        flex-direction: column;
+    }
+
+    .goal-measurements {
+        gap: 8px;
+    }
+
+    .goal-measurement strong {
+        font-size: 14px;
+    }
+
+    .automatic-label {
+        white-space: normal;
+    }
+
+}

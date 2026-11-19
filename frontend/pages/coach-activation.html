@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>KBD | Activate Coach Account</title>
+
+<link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon.png?v=2"
+>
+
+    <link
+    rel="stylesheet"
+    href="../CSS/style.css"
+>
+
+<script src="../js/terms-guard.js"></script>
+
+</head>
+
+<body class="login-body">
+
+    <main class="login-page">
+
+        <!-- BRAND PANEL -->
+
+        <section
+            class="login-brand-panel"
+            aria-labelledby="activation-brand-heading"
+        >
+
+            <img
+                src="../images/kbd-logo.png"
+                alt="KBD logo"
+                class="login-logo"
+            >
+
+            <div class="login-brand-content">
+
+                <p class="eyebrow">
+                    KNOWING · BEING · DOING
+                </p>
+
+                <h1 id="activation-brand-heading">
+                    Activate your KBD Coach workspace.
+                </h1>
+
+                <p>
+                    Complete your invitation to access
+                    coaching programmes, participants,
+                    sessions and development progress.
+                </p>
+
+            </div>
+
+            <p class="login-brand-footer">
+                KNOWING → BEING → DOING → RESULTS
+            </p>
+
+        </section>
+
+
+        <!-- ACTIVATION FORM -->
+
+        <section
+            class="login-form-panel"
+            aria-labelledby="activation-heading"
+        >
+
+            <div
+                id="invitation-loading"
+                class="login-form"
+            >
+
+                <p class="eyebrow">
+                    COACH INVITATION
+                </p>
+
+                <h2>
+                    Checking your invitation
+                </h2>
+
+                <p>
+                    Please wait while your invitation
+                    is verified.
+                </p>
+
+            </div>
+
+
+            <div
+                id="invitation-error"
+                class="login-form"
+                hidden
+            >
+
+                <p class="eyebrow">
+                    COACH INVITATION
+                </p>
+
+                <h2>
+                    Invitation unavailable
+                </h2>
+
+                <div
+                    id="invitation-error-message"
+                    class="form-message error"
+                    role="alert"
+                ></div>
+
+                <div class="authentication-links">
+
+                    <a href="verification.html">
+                        Return to account selection
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <form
+                id="coach-activation-form"
+                class="login-form"
+                hidden
+            >
+
+                <p class="eyebrow">
+                    COACH ACCOUNT ACTIVATION
+                </p>
+
+                <h2 id="activation-heading">
+                    Create your Coach account
+                </h2>
+
+                <p class="login-introduction">
+                    Your access was approved by a
+                    KBD administrator.
+                </p>
+
+
+                <div class="form-group">
+
+                    <label for="coach-email">
+                        Invited email address
+                    </label>
+
+                    <input
+                        id="coach-email"
+                        type="email"
+                        readonly
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="coach-first-name">
+                        First name
+                    </label>
+
+                    <input
+                        id="coach-first-name"
+                        name="FirstName"
+                        type="text"
+                        autocomplete="given-name"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="coach-last-name">
+                        Last name
+                    </label>
+
+                    <input
+                        id="coach-last-name"
+                        name="LastName"
+                        type="text"
+                        autocomplete="family-name"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="coach-password">
+                        Create password
+                    </label>
+
+                    <input
+                        id="coach-password"
+                        name="Password"
+                        type="password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <small class="form-help">
+                        Use at least 8 characters.
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="coach-confirm-password">
+                        Confirm password
+                    </label>
+
+                    <input
+                        id="coach-confirm-password"
+                        name="ConfirmPassword"
+                        type="password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                </div>
+
+
+                <div
+                    id="coach-activation-message"
+                    class="form-message"
+                    aria-live="polite"
+                ></div>
+
+
+                <button
+                    id="coach-activation-button"
+                    class="primary-button login-button"
+                    type="submit"
+                >
+                    Activate Coach Account
+                </button>
+
+
+                <div class="authentication-links">
+
+                    <a href="login.html?role=Coach">
+                        Already activated? Sign in
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/coach-activation.js"></script>
+
+</body>
+
+</html>

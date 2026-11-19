@@ -1,0 +1,101 @@
+
+/* =================================
+   TOP NAVIGATION BAR
+================================= */
+
+.topbar {
+    background: var(--kbd-panel);
+    border-bottom: 1px solid var(--kbd-border);
+
+    padding: 25px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar-heading h1 {
+    color: var(--kbd-navy);
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.eyebrow {
+    color: var(--kbd-green);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.notification-button {
+    position: relative;
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    color: var(--kbd-navy);
+}
+
+.notification-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 8px;
+    height: 8px;
+
+    background: var(--kbd-green);
+    border-radius: 50%;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--kbd-green);
+    color: var(--kbd-navy);
+    font-weight: bold;
+}
+
+.user-details strong {
+    display: block;
+    font-size: 13px;
+}
+
+.user-details span {
+    display: block;
+    color: var(--kbd-muted);
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+@media (max-width: 700px) {
+    .topbar {
+        padding: 20px;
+    }
+
+    .topbar-heading h1 {
+        font-size: 22px;
+    }
+
+    .user-details {
+        display: none;
+    }
+}

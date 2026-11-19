@@ -1,0 +1,58 @@
+
+/* =================================
+   KBD COACH PORTAL - GLOBAL STYLES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --kbd-navy: #0b1f3a;
+    --kbd-navy-light: #16345c;
+
+    --kbd-green: #01af7a;
+    --kbd-green-light: #48cfa4;
+
+    --kbd-background: #f5f6f8;
+    --kbd-panel: #ffffff;
+
+    --kbd-text: #172235;
+    --kbd-muted: #6f7b8c;
+
+    --kbd-border: #e2e5ea;
+
+    --kbd-soft-blue: #edf2f8;
+    --kbd-soft-green: #e4f7f1;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--kbd-background);
+    color: var(--kbd-text);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.app,
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+

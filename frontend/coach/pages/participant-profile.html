@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KBD | Participant Profile</title>
+
+    <!-- Global styling -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Shared components -->
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <!-- Profile styling -->
+    <link rel="stylesheet" href="../css/participant-profile.css">
+<link rel="stylesheet" href="../css/integration.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        
+<div id="sidebar-container"></div>
+
+
+        <div class="main-content">
+
+            <!-- Navbar -->
+            
+<div id="navbar-container"></div>
+
+
+            <main class="participant-profile-page">
+
+                <!-- Back navigation -->
+                <div class="profile-back-row">
+                    <a href="participants.html" class="back-button">
+                        ← Back to Participants
+                    </a>
+                </div>
+
+                <!-- Profile Header -->
+                <section class="profile-header-card">
+
+                    <div class="profile-identity">
+
+                        <div class="profile-avatar" id="profile-avatar">
+                            --
+                        </div>
+
+                        <div class="profile-heading-info">
+
+                            <p class="eyebrow">PARTICIPANT PROFILE</p>
+
+                            <h2 id="profile-name">Loading participant...</h2>
+
+                            <p id="profile-email"></p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="profile-header-actions">
+
+                        <span id="profile-status" class="profile-status">
+                            --
+                        </span>
+
+                        <button type="button" class="primary-button"
+                            id="edit-participant-btn">
+                            Edit Participant
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <!-- Profile Information -->
+                <div class="profile-content-grid">
+
+                    <!-- Contact Information -->
+                    <section class="profile-card">
+
+                        <div class="profile-card-heading">
+                            <h3>Contact Information</h3>
+                            <p>Participant contact details</p>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Email Address</span>
+                            <strong id="profile-contact-email">--</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Phone Number</span>
+                            <strong id="profile-phone">--</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Date Added</span>
+                            <strong id="profile-date">--</strong>
+                        </div>
+
+                    </section>
+
+                    <!-- Programme Information -->
+                    <section class="profile-card">
+
+                        <div class="profile-card-heading">
+                            <h3>Programme Information</h3>
+                            <p>Assigned coaching programme</p>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Assigned Programme</span>
+                            <strong id="profile-programme">--</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Participant Status</span>
+                            <strong id="profile-programme-status">--</strong>
+                        </div>
+
+                    </section>
+
+                    <!-- Participant Goals -->
+                    <section class="profile-card profile-goals-card">
+
+                        <div class="profile-card-heading">
+                            <h3>Participant Goals</h3>
+                            <p>What the participant wants to achieve</p>
+                        </div>
+
+                        <p id="profile-goals">
+                            No goals have been added yet.
+                        </p>
+
+                    </section>
+
+                </div>
+
+                <!-- Error message -->
+                <div id="profile-error" class="profile-error" hidden>
+                    Participant information could not be loaded.
+                    Please return to the Participants page.
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- Shared layout -->
+    <script type="module" src="../js/layout.js"></script>
+
+    <!-- Profile functionality -->
+    <script type="module" src="../js/participant-profile.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KBD | Programmes</title>
+
+    <!-- Global styling -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Shared components -->
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <!-- Programmes styling -->
+    <link rel="stylesheet" href="../css/programmes.css">
+<link rel="stylesheet" href="../css/integration.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        
+<div id="sidebar-container"></div>
+
+
+        <!-- Main content -->
+        <div class="main-content">
+
+            <!-- Navbar -->
+            
+<div id="navbar-container"></div>
+
+
+            <main class="programmes-page">
+
+                <!-- Page heading -->
+                <section class="page-heading">
+
+                    <div>
+                        <h1>Programmes</h1>
+                        <p>Manage your coaching programmes and learning journeys.</p>
+                    </div>
+
+                    <button type="button" class="primary-btn" id="add-programme-btn">
+                        + Create Programme
+                    </button>
+
+                </section>
+
+                <!-- Programme statistics -->
+                <section class="programme-stats">
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>Total Programmes</span>
+                            <h2 id="total-programmes">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>Active Programmes</span>
+                            <h2 id="active-programmes">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>Draft Programmes</span>
+                            <h2 id="draft-programmes">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>Archived Programmes</span>
+                            <h2 id="archived-programmes">0</h2>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- Programme form -->
+                <section class="programme-form-panel"
+                    id="programme-form-panel"
+                    style="display: none;">
+
+                    <div class="form-heading">
+
+                        <div>
+                            <h2 id="programme-form-title">Create Programme</h2>
+                            <p>Add the details of your coaching programme.</p>
+                        </div>
+
+                        <button type="button"
+                            class="close-btn"
+                            id="close-programme-form">
+                            &times;
+                        </button>
+
+                    </div>
+
+                    <form id="programme-form">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="programme-name">Programme Name *</label>
+                                <input
+                                    type="text"
+                                    id="programme-name"
+                                    name="name"
+                                    placeholder="e.g. Leadership Development"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="programme-category">Category *</label>
+                                <select id="programme-category" name="category" required>
+                                    <option value="">Select category</option>
+                                    <option value="Personal Development">Personal Development</option>
+                                    <option value="Leadership">Leadership</option>
+                                    <option value="Career Development">Career Development</option>
+                                    <option value="Business Coaching">Business Coaching</option>
+                                    <option value="Wellness">Wellness</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="programme-duration">Duration *</label>
+                                <select id="programme-duration" name="duration" required>
+                                    <option value="">Select duration</option>
+                                    <option value="2 weeks">2 weeks</option>
+                                    <option value="1 month">1 month</option>
+                                    <option value="3 months">3 months</option>
+                                    <option value="6 months">6 months</option>
+                                    <option value="12 months">12 months</option>
+                                    <option value="Ongoing">Ongoing</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="programme-status">Status *</label>
+                                <select id="programme-status" name="status" required>
+                                    <option value="Draft">Draft</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="programme-description">Programme Description *</label>
+                                <textarea
+                                    id="programme-description"
+                                    name="description"
+                                    rows="4"
+                                    placeholder="Describe what this programme is about..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="programme-objectives">Programme Objectives</label>
+                                <textarea
+                                    id="programme-objectives"
+                                    name="objectives"
+                                    rows="3"
+                                    placeholder="What should participants achieve?"
+                                ></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+
+                            <button type="button"
+                                class="secondary-btn"
+                                id="cancel-programme-form">
+                                Cancel
+                            </button>
+
+                            <button type="submit"
+                                class="primary-btn"
+                                id="save-programme-btn">
+                                Save Programme
+                            </button>
+
+                        </div>
+
+                        <p id="programme-form-message" class="form-message"></p>
+
+                    </form>
+
+                </section>
+
+                <!-- Programmes list -->
+                <section class="programmes-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2>All Programmes</h2>
+                            <p>View and manage your coaching programmes.</p>
+                        </div>
+
+                        <span id="programme-results-count">0 programmes</span>
+
+                    </div>
+
+                    <!-- Search and filters -->
+                    <div class="programmes-toolbar">
+
+                        <div class="search-box">
+                            <input
+                                type="search"
+                                id="programme-search"
+                                placeholder="Search programmes..."
+                            >
+                        </div>
+
+                        <div class="filter-box">
+                            <select id="programme-status-filter">
+                                <option value="All">All Statuses</option>
+                                <option value="Active">Active</option>
+                                <option value="Draft">Draft</option>
+                                <option value="Completed">Completed</option>
+<option value="Archived">Archived</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Programmes table -->
+                    <div class="table-container">
+
+                        <table class="programmes-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Programme Name</th>
+                                    <th>Category</th>
+                                    <th>Duration</th>
+                                    <th>Status</th>
+                                    <th>Date Created</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="programmes-table-body">
+                                <!-- Programmes will be displayed here -->
+                            </tbody>
+
+                        </table>
+
+                        <div class="empty-state" id="programmes-empty-state">
+                            <h3>No programmes yet</h3>
+                            <p>Create your first coaching programme to get started.</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- Shared layout -->
+    <script type="module" src="../js/layout.js"></script>
+
+    <!-- Programmes functionality -->
+    <script type="module" src="../js/page.js"></script>
+
+</body>
+</html>

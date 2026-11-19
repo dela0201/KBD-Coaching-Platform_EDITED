@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KBD | Coach Portal</title>
+
+    <!-- Shared styling -->
+    <link rel="stylesheet" href="css/global.css">
+
+    <!-- Component styling -->
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <!-- Dashboard styling -->
+    <link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="./css/integration.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar component loads here -->
+        
+<div id="sidebar-container"></div>
+
+
+        <div class="main-content">
+
+            <!-- Navbar component loads here -->
+            
+<div id="navbar-container"></div>
+
+
+            <!-- Dashboard content -->
+            <main class="dashboard">
+
+                <section class="welcome">
+                    <div>
+                        <p class="eyebrow">COACH OVERVIEW</p>
+                        <h2 id="welcome-greeting">Welcome back!</h2>
+                        <p>Here's an overview of your coaching activities.</p>
+                    </div>
+
+                    <p id="welcome-date" class="welcome-date"></p>
+                </section>
+
+                <!-- Dashboard statistics -->
+                <section class="stats-grid">
+
+                    <div class="stat-card">
+                        <p>Total Participants</p>
+                        <h2 id="total-participants">0</h2>
+                        <span>All registered participants</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Active Participants</p>
+                        <h2 id="active-participants">0</h2>
+                        <span>Currently active</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Upcoming Sessions</p>
+                        <h2 id="upcoming-sessions">0</h2>
+                        <span>Scheduled sessions</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Pending Actions</p>
+                        <h2 id="pending-actions">0</h2>
+                        <span>Actions requiring attention</span>
+                    </div>
+
+                </section>
+
+                <!-- Dashboard content panels -->
+                <section class="content-grid">
+
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <p class="eyebrow">YOUR SCHEDULE</p>
+                                <h2>Upcoming Sessions</h2>
+                            </div>
+
+                            <a href="pages/appointments.html">View all</a>
+                        </div>
+
+                        <div id="upcoming-sessions-list">
+                            <div class="empty-state">
+                                <p>No upcoming sessions yet.</p>
+                                <span>Your scheduled sessions will appear here.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <p class="eyebrow">LATEST UPDATES</p>
+                                <h2>Recent Activity</h2>
+                            </div>
+                        </div>
+
+                        <div id="recent-activity">
+                            <div class="empty-state">
+                                <p>No recent activity.</p>
+                                <span>Participant and coaching updates will appear here.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script type="module" src="js/layout.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>

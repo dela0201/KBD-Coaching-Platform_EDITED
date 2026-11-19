@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KBD | Appointments & Sessions</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/appointments.css">
+<link rel="stylesheet" href="../css/integration.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <div id="sidebar-container"></div>
+
+        <div class="main-content">
+
+            <div id="navbar-container"></div>
+
+            <main class="appointments-page">
+
+                <!-- PAGE HEADING -->
+                <section class="page-heading">
+                    <div>
+                        <h1>Appointments & Sessions</h1>
+                        <p>Schedule coaching sessions and manage your participant meetings.</p>
+                    </div>
+
+                    <button type="button" class="primary-button" id="add-appointment-btn">
+                        + Schedule Session
+                    </button>
+                </section>
+
+
+                <!-- SESSION STATISTICS -->
+                <section class="appointment-stats">
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <p>Total Appointments</p>
+                            <h2 id="total-appointments">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <p>Upcoming Sessions</p>
+                            <h2 id="upcoming-appointments">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <p>Completed Sessions</p>
+                            <h2 id="completed-appointments">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <p>Cancelled Sessions</p>
+                            <h2 id="cancelled-appointments">0</h2>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <!-- SCHEDULE SESSION FORM -->
+                <section class="appointment-form-panel"
+                    id="appointment-form-panel"
+                    hidden>
+
+                    <div class="form-heading">
+                        <div>
+                            <h2 id="appointment-form-title">Schedule a Coaching Session</h2>
+                            <p>Enter the participant and session details.</p>
+                        </div>
+
+                        <button type="button"
+                            class="close-form-btn"
+                            id="close-appointment-form"
+                            aria-label="Close form">
+                            &times;
+                        </button>
+                    </div>
+
+                    <form id="appointment-form">
+
+                        <div class="form-grid">
+
+                            <div class="form-group"><label for="appointment-status">Status</label><select id="appointment-status"><option value="Scheduled">Scheduled</option><option value="Rescheduled">Rescheduled</option><option value="Completed">Completed</option><option value="Cancelled">Cancelled</option><option value="Missed">Missed</option></select></div><div class="form-group"><label for="appointment-programme">Programme</label><select id="appointment-programme" required><option value="">Select programme</option></select></div><div class="form-group">
+                                <label for="appointment-participant">Participant</label>
+                                <select id="appointment-participant"
+                                    name="participantId"
+                                    required>
+                                    <option value="">Select participant</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-title">Session Title</label>
+                                <input type="text"
+                                    id="appointment-title"
+                                    name="title"
+                                    placeholder="e.g. Career Development Session"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-date">Session Date</label>
+                                <input type="date"
+                                    id="appointment-date"
+                                    name="date"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-time">Start Time</label>
+                                <input type="time"
+                                    id="appointment-time"
+                                    name="time"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-duration">Duration</label>
+                                <select id="appointment-duration"
+                                    name="duration"
+                                    required>
+                                    <option value="">Select duration</option>
+                                    <option value="30">30 minutes</option>
+                                    <option value="45">45 minutes</option>
+                                    <option value="60">1 hour</option>
+                                    <option value="90">1 hour 30 minutes</option>
+                                    <option value="120">2 hours</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-type">Session Type</label>
+                                <select id="appointment-type"
+                                    name="type"
+                                    required>
+                                    <option value="">Select session type</option>
+                                    <option value="In Person">In Person</option>
+                                    <option value="Online">Online</option>
+                                    <option value="Phone Call">Phone Call</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="appointment-location-group">
+                                <label for="appointment-location">
+                                    Location / Call Details
+                                </label>
+                                <input type="text"
+                                    id="appointment-location"
+                                    name="location"
+                                    placeholder="Enter meeting location or call details">
+                            </div>
+
+                            <div class="form-group" id="appointment-meeting-link-group">
+                                <label for="appointment-meeting-link">
+                                    Online Meeting Link
+                                </label>
+                                <input type="url"
+                                    id="appointment-meeting-link"
+                                    name="meetingLink"
+                                    placeholder="https://...">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="appointment-agenda">
+                                    Session Agenda / Preparation Notes
+                                </label>
+                                <textarea id="appointment-agenda"
+                                    name="agenda"
+                                    placeholder="What will the coach and participant focus on during this session?"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group"><label for="appointment-notes">Private Coach notes</label><textarea id="appointment-notes"></textarea></div><div class="form-actions">
+
+                            <button type="button"
+                                class="secondary-button"
+                                id="cancel-appointment-form">
+                                Close
+                            </button>
+
+                            <button type="submit"
+                                class="primary-button"
+                                id="save-appointment-btn">
+                                Schedule Session
+                            </button>
+
+                        </div>
+
+                        <p id="appointment-form-message"
+                            role="status"
+                            aria-live="polite"></p>
+
+                    </form>
+
+                </section>
+
+
+                <!-- APPOINTMENTS LIST -->
+                <section class="appointments-panel">
+
+                    <div class="appointments-panel-heading">
+                        <div>
+                            <h2>Manage Appointments</h2>
+                            <p id="appointment-results-count">0 appointments</p>
+                        </div>
+                    </div>
+
+
+                    <!-- SEARCH AND FILTERS -->
+                    <div class="appointment-toolbar">
+
+                        <input type="search"
+                            id="appointment-search"
+                            placeholder="Search participants or sessions..."
+                            aria-label="Search appointments">
+
+                        <select id="appointment-status-filter"
+                            aria-label="Filter appointments by status">
+                            <option value="All">All Statuses</option>
+                            <option value="Scheduled">Scheduled</option>
+<option value="Rescheduled">Rescheduled</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                            <option value="Missed">Missed</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- APPOINTMENTS TABLE -->
+                    <div class="table-container">
+
+                        <table class="appointments-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Participant</th>
+                                    <th>Session</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Duration</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="appointments-table-body"></tbody>
+
+                        </table>
+
+                        <div class="empty-state"
+                            id="appointments-empty-state">
+                            <h3>No appointments yet</h3>
+                            <p>Schedule your first coaching session to get started.</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="../js/layout.js"></script>
+    <script type="module" src="../js/page.js"></script>
+
+</body>
+</html>

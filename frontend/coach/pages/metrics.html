@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KBD | Metrics & Progress</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/metrics.css">
+<link rel="stylesheet" href="../css/integration.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <div id="sidebar-container"></div>
+
+        <div class="main-content">
+
+            <!-- NAVBAR -->
+            <div id="navbar-container"></div>
+
+            <main class="metrics-page">
+
+                <!-- PAGE HEADING -->
+                <section class="page-heading">
+
+                    <div>
+                        <h1>Metrics & Progress</h1>
+                        <p>
+                            Monitor participant development, goals
+                            and coaching outcomes.
+                        </p>
+                    </div>
+
+                    <button type="button"
+                        class="primary-btn"
+                        id="add-goal-btn">
+                        + Create Goal
+                    </button>
+
+                </section>
+
+
+                <!-- GOAL STATISTICS -->
+                <section class="metric-stats">
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>Active Goals</span>
+                            <h2 id="active-goals-count">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>Goals Achieved</span>
+                            <h2 id="goals-achieved-count">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>On Track</span>
+                            <h2 id="on-track-goals-count">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>Needs Attention</span>
+                            <h2 id="goals-needing-attention-count">0</h2>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <!-- AUTOMATIC INSIGHTS -->
+                <section class="automatic-insights-panel">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Automatic Insights</h2>
+                            <p>
+                                Coaching activity calculated from
+                                your platform records.
+                            </p>
+                        </div>
+
+                        <span class="automatic-label">
+                            Automatically calculated
+                        </span>
+
+                    </div>
+
+
+                    <div class="insights-grid">
+
+                        <div class="insight-card">
+
+                            <span>Action Completion Rate</span>
+
+                            <h3 id="insight-action-completion-rate">
+                                0%
+                            </h3>
+
+                            <p id="insight-action-summary">
+                                Based on recorded actions.
+                            </p>
+
+                        </div>
+
+
+                        <div class="insight-card">
+
+                            <span>Completed Sessions</span>
+
+                            <h3 id="insight-completed-sessions">
+                                0
+                            </h3>
+
+                            <p>
+                                Completed coaching appointments.
+                            </p>
+
+                        </div>
+
+
+                        <div class="insight-card">
+
+                            <span>Open Actions</span>
+
+                            <h3 id="insight-open-actions">
+                                0
+                            </h3>
+
+                            <p>
+                                Actions not yet completed or cancelled.
+                            </p>
+
+                        </div>
+
+
+                        <div class="insight-card">
+
+                            <span>Participants With Goals</span>
+
+                            <h3 id="insight-participants-with-goals">
+                                0
+                            </h3>
+
+                            <p>
+                                Participants with active coaching goals.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="insights-note">
+                        Insights are calculated from available platform
+                        records. Additional sources can be connected
+                        as KBD features are developed.
+                    </p>
+
+                </section>
+
+
+                <!-- CREATE / EDIT GOAL FORM -->
+                <section class="metric-form-panel"
+                    id="goal-form-panel"
+                    hidden>
+
+                    <div class="form-heading">
+
+                        <div>
+                            <h2 id="goal-form-title">Create Participant Goal</h2>
+
+                            <p>
+                                Define what the participant wants to achieve
+                                and how success will be measured.
+                            </p>
+                        </div>
+
+                        <button type="button"
+                            class="close-btn"
+                            id="close-goal-form"
+                            aria-label="Close form">
+                            &times;
+                        </button>
+
+                    </div>
+
+
+                    <form id="goal-form">
+
+                        <div class="form-grid">
+
+                            <!-- PARTICIPANT -->
+                            <div class="form-group">
+
+                                <label for="goal-participant">
+                                    Participant *
+                                </label>
+
+                                <select id="goal-participant"
+                                    name="participantId"
+                                    required>
+
+                                    <option value="">
+                                        Select participant
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- GOAL NAME -->
+                            <div class="form-group">
+
+                                <label for="goal-name">
+                                    Goal Name *
+                                </label>
+
+                                <input type="text"
+                                    id="goal-name"
+                                    name="name"
+                                    placeholder="e.g. Improve career readiness"
+                                    required>
+
+                            </div>
+
+
+                            <!-- CATEGORY -->
+                            <div class="form-group">
+
+                                <label for="goal-category">
+                                    Category *
+                                </label>
+
+                                <select id="goal-category"
+                                    name="category"
+                                    required>
+
+                                    <option value="">
+                                        Select category
+                                    </option>
+
+                                    <option value="Personal Development">
+                                        Personal Development
+                                    </option>
+
+                                    <option value="Leadership">
+                                        Leadership
+                                    </option>
+
+                                    <option value="Career Development">
+                                        Career Development
+                                    </option>
+
+                                    <option value="Communication">
+                                        Communication
+                                    </option>
+
+                                    <option value="Productivity">
+                                        Productivity
+                                    </option>
+
+                                    <option value="Wellness">
+                                        Wellness
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- MEASUREMENT UNIT -->
+                            <div class="form-group">
+
+                                <label for="goal-unit">
+                                    Measurement Unit *
+                                </label>
+
+                                <input type="text"
+                                    id="goal-unit"
+                                    name="unit"
+                                    placeholder="e.g. Applications, hours, score out of 10"
+                                    required>
+
+                            </div>
+
+
+                            <!-- BASELINE -->
+                            <div class="form-group">
+
+                                <label for="goal-baseline">
+                                    Starting Point *
+                                </label>
+
+                                <input type="number"
+                                    id="goal-baseline"
+                                    name="baseline"
+                                    step="any"
+                                    placeholder="e.g. 0"
+                                    required>
+
+                                <small>
+                                    The participant's starting measurement.
+                                </small>
+
+                            </div>
+
+
+                            <!-- TARGET -->
+                            <div class="form-group">
+
+                                <label for="goal-target">
+                                    Target Value *
+                                </label>
+
+                                <input type="number"
+                                    id="goal-target"
+                                    name="target"
+                                    step="any"
+                                    placeholder="e.g. 20"
+                                    required>
+
+                            </div>
+
+
+                            <!-- DIRECTION -->
+                            <div class="form-group">
+
+                                <label for="goal-direction">
+                                    Desired Progress *
+                                </label>
+
+                                <select id="goal-direction"
+                                    name="direction"
+                                    required>
+
+                                    <option value="increase">
+                                        Increase towards target
+                                    </option>
+
+                                    <option value="decrease">
+                                        Decrease towards target
+                                    </option>
+
+                                </select>
+
+                                <small>
+                                    Choose whether success means increasing
+                                    or decreasing the measurement.
+                                </small>
+
+                            </div>
+
+
+                            <!-- TARGET DATE -->
+                            <div class="form-group">
+
+                                <label for="goal-target-date">
+                                    Target Date *
+                                </label>
+
+                                <input type="date"
+                                    id="goal-target-date"
+                                    name="targetDate"
+                                    required>
+
+                            </div>
+
+
+                            <!-- UPDATE FREQUENCY -->
+                            <div class="form-group">
+
+                                <label for="goal-frequency">
+                                    Progress Update Frequency *
+                                </label>
+
+                                <select id="goal-frequency"
+                                    name="frequency"
+                                    required>
+
+                                    <option value="Weekly">Weekly</option>
+
+                                    <option value="Fortnightly">
+                                        Fortnightly
+                                    </option>
+
+                                    <option value="Monthly">Monthly</option>
+
+                                    <option value="No Reminder">
+                                        No Reminder
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- GOAL DESCRIPTION -->
+                            <div class="form-group full-width">
+
+                                <label for="goal-description">
+                                    Goal Description
+                                </label>
+
+                                <textarea id="goal-description"
+                                    name="description"
+                                    rows="4"
+                                    placeholder="Describe what the participant wants to achieve and why this goal is important..."></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button type="button"
+                                class="secondary-btn"
+                                id="cancel-goal-form">
+                                Cancel
+                            </button>
+
+                            <button type="submit"
+                                class="primary-btn"
+                                id="save-goal-btn">
+                                Create Goal
+                            </button>
+
+                        </div>
+
+                        <p id="goal-form-message"
+                            class="form-message"
+                            role="status"
+                            aria-live="polite"></p>
+
+                    </form>
+
+                </section>
+
+
+                <!-- RECORD PROGRESS UPDATE -->
+                <section class="metric-form-panel"
+                    id="goal-update-panel"
+                    hidden>
+
+                    <div class="form-heading">
+
+                        <div>
+                            <h2>Record Progress Update</h2>
+
+                            <p id="goal-update-title">
+                                Update participant progress.
+                            </p>
+                        </div>
+
+                        <button type="button"
+                            class="close-btn"
+                            id="close-goal-update"
+                            aria-label="Close update form">
+                            &times;
+                        </button>
+
+                    </div>
+
+
+                    <form id="goal-update-form">
+
+                        <input type="hidden"
+                            id="goal-update-id"
+                            name="goalId">
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="goal-update-value">
+                                    New Measurement *
+                                </label>
+
+                                <input type="number"
+                                    id="goal-update-value"
+                                    name="value"
+                                    step="any"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="goal-update-date">
+                                    Update Date *
+                                </label>
+
+                                <input type="date"
+                                    id="goal-update-date"
+                                    name="date"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label for="goal-update-notes">
+                                    Progress Notes
+                                </label>
+
+                                <textarea id="goal-update-notes"
+                                    name="notes"
+                                    rows="3"
+                                    placeholder="Describe the progress, achievements or challenges..."></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button type="button"
+                                class="secondary-btn"
+                                id="cancel-goal-update">
+                                Cancel
+                            </button>
+
+                            <button type="submit"
+                                class="primary-btn"
+                                id="save-goal-update-btn">
+                                Save Progress Update
+                            </button>
+
+                        </div>
+
+                        <p id="goal-update-message"
+                            class="form-message"
+                            role="status"
+                            aria-live="polite"></p>
+
+                    </form>
+
+                </section>
+
+
+                <!-- PARTICIPANT GOALS -->
+                <section class="metrics-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2>Participant Goals</h2>
+
+                            <p>
+                                Review goal progress, targets and
+                                participant development.
+                            </p>
+                        </div>
+
+                        <span id="goal-results-count">
+                            0 goals
+                        </span>
+
+                    </div>
+
+
+                    <!-- SEARCH AND FILTERS -->
+                    <div class="metrics-toolbar">
+
+                        <div class="search-box">
+
+                            <input type="search"
+                                id="goal-search"
+                                placeholder="Search goals or participants..."
+                                aria-label="Search participant goals">
+
+                        </div>
+
+
+                        <div class="filter-box">
+
+                            <select id="goal-participant-filter"
+                                aria-label="Filter by participant">
+
+                                <option value="All">
+                                    All Participants
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filter-box">
+
+                            <select id="goal-status-filter"
+                                aria-label="Filter by goal status">
+
+                                <option value="All">All Goals</option>
+
+                                <option value="On Track">On Track</option>
+
+                                <option value="Needs Attention">
+                                    Needs Attention
+                                </option>
+
+                                <option value="Achieved">Achieved</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- GOAL CARDS -->
+                    <div id="goal-list" class="goal-list"></div>
+
+
+                    <!-- EMPTY STATE -->
+                    <div class="empty-state"
+                        id="goals-empty-state">
+
+                        <h3>No participant goals yet</h3>
+
+                        <p>
+                            Create a measurable goal to start tracking
+                            participant progress.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- PROGRESS HISTORY -->
+                <section class="metrics-panel goal-history-panel"
+                    id="goal-history-panel"
+                    hidden>
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2 id="goal-history-title">
+                                Progress History
+                            </h2>
+
+                            <p>
+                                Review previous measurements and
+                                participant updates.
+                            </p>
+                        </div>
+
+                        <button type="button"
+                            class="secondary-btn"
+                            id="close-goal-history">
+                            Close History
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table class="metrics-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Measurement</th>
+                                    <th>Unit</th>
+                                    <th>Progress Date</th>
+                                    <th>Notes</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="goal-history-table-body"></tbody>
+
+                        </table>
+
+
+                        <div class="empty-state"
+                            id="goal-history-empty-state">
+
+                            <h3>No progress updates yet</h3>
+
+                            <p>
+                                Progress updates will appear here
+                                once they are recorded.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- SHARED LAYOUT -->
+    <script type="module" src="../js/layout.js"></script>
+
+    <!-- METRICS FUNCTIONALITY -->
+    <script type="module" src="../js/goals.js"></script>
+
+</body>
+
+</html>

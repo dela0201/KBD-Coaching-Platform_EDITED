@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KBD | Reports</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/reports.css">
+<link rel="stylesheet" href="../css/integration.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        
+<div id="sidebar-container"></div>
+
+
+        <div class="main-content">
+
+            
+<div id="navbar-container"></div>
+
+
+            <main class="reports-page">
+
+                <section class="reports-heading">
+                    <h2>Reports</h2>
+                    <p>Generate, review and download coaching reports.</p>
+                </section>
+
+                <!-- REPORT GENERATOR -->
+                <section class="report-generator">
+
+                    <h3>Generate a Report</h3>
+
+                    <form id="report-form">
+
+                        <div class="report-form-grid">
+
+                            <div class="report-form-group">
+                                <label for="report-type">Report Type</label>
+                                <select id="report-type" required>
+                                    <option value="participants">Participants Report</option>
+                                    <option value="appointments">Appointments Report</option>
+                                    <option value="programmes">Programmes Report</option>
+                                    <option value="actions">Actions Report</option>
+                                    <option value="metrics">Metrics Report</option>
+                                    <option value="overview">Coaching Overview</option>
+                                </select>
+                            </div>
+
+                            <div class="report-form-group">
+                                <label for="report-participant">Participant</label>
+                                <select id="report-participant">
+                                    <option value="all">All Participants</option>
+                                </select>
+                            </div>
+
+                            <div class="report-form-group">
+                                <label for="report-start-date">Start Date</label>
+                                <input type="date" id="report-start-date">
+                            </div>
+
+                            <div class="report-form-group">
+                                <label for="report-end-date">End Date</label>
+                                <input type="date" id="report-end-date">
+                            </div>
+
+                        </div>
+
+                        <div class="report-actions">
+                            <button type="submit" class="report-button primary">
+                                Generate Report
+                            </button>
+                        </div>
+
+                    </form>
+
+                    <p id="report-message" class="report-message"></p>
+
+                </section>
+
+                <!-- REPORT PREVIEW -->
+                <section class="report-preview">
+
+                    <div class="report-preview-header">
+                        <h3>Report Preview</h3>
+
+                        <div class="report-actions">
+                            <button type="button" id="download-csv-btn"
+                                class="report-button download" disabled>
+                                Download CSV
+                            </button>
+
+                            <button type="button" id="download-pdf-btn"
+                                class="report-button primary" disabled>
+                                Download PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="report-preview-content" class="report-preview-content">
+
+                        <div class="report-empty">
+                            <p>No report generated yet.</p>
+                            <p>Select your report options above and click Generate Report.</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="../js/layout.js"></script>
+    <script type="module" src="../js/reports.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,423 @@
+
+/* =========================================
+   KBD COACHING PLATFORM
+   PARTICIPANTS PAGE STYLING
+========================================= */
+
+/* Main page */
+
+.participants-page {
+    padding: 25px;
+    color: #172235;
+}
+
+/* Page heading */
+
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.page-heading h2 {
+    color: #0b1f3a;
+    font-size: 26px;
+    margin: 5px 0;
+}
+
+.page-heading p:not(.eyebrow) {
+    color: #6f7b8c;
+    margin: 5px 0;
+}
+
+.eyebrow {
+    color: #01af7a;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin: 0 0 5px;
+}
+
+/* Buttons */
+
+.primary-button {
+    background: #01af7a;
+    color: #ffffff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.primary-button:hover {
+    background: #008f64;
+}
+
+.secondary-button {
+    background: #ffffff;
+    color: #0b1f3a;
+    border: 1px solid #e2e5ea;
+    padding: 11px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secondary-button:hover {
+    background: #edf2f8;
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #6f7b8c;
+    cursor: pointer;
+}
+
+/* Statistics */
+
+.participant-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.participant-stat-card {
+    background: #ffffff;
+    border: 1px solid #e2e5ea;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+    background: #edf2f8;
+    color: #0b1f3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
+.active-icon {
+    background: #e4f7f1;
+    color: #01af7a;
+}
+
+.inactive-icon {
+    background: #f1f2f4;
+    color: #6f7b8c;
+}
+
+.participant-stat-card p {
+    color: #6f7b8c;
+    font-size: 13px;
+    margin: 0 0 7px;
+}
+
+.participant-stat-card h3 {
+    color: #0b1f3a;
+    font-size: 26px;
+    margin: 0;
+}
+
+/* General panels */
+
+.form-panel,
+.participants-panel {
+    background: #ffffff;
+    border: 1px solid #e2e5ea;
+    padding: 22px;
+    margin-bottom: 25px;
+}
+
+.form-panel[hidden],
+.table-empty-state[hidden] {
+    display: none !important;
+}
+
+/* Panel headings */
+
+.panel-heading,
+.participants-panel-heading,
+.dialog-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.panel-heading h3,
+.participants-panel-heading h3,
+.dialog-heading h3 {
+    color: #0b1f3a;
+    font-size: 17px;
+    margin: 0;
+}
+
+.participants-panel-heading > span {
+    color: #6f7b8c;
+    font-size: 12px;
+}
+
+/* Participant form */
+
+#participant-form {
+    width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #172235;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #e2e5ea;
+    background: #ffffff;
+    color: #172235;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #01af7a;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.form-message {
+    font-size: 13px;
+    color: #01af7a;
+    margin-top: 12px;
+}
+
+/* Search and filters */
+
+.participant-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e2e5ea;
+    padding: 0 12px;
+    min-width: 0;
+}
+
+.search-box span {
+    color: #6f7b8c;
+    font-size: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    font-size: 13px;
+}
+
+.participant-toolbar select {
+    padding: 12px;
+    border: 1px solid #e2e5ea;
+    background: #ffffff;
+    color: #172235;
+    font-size: 13px;
+}
+
+/* Participants table */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.participants-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.participants-table th {
+    background: #edf2f8;
+    color: #0b1f3a;
+    padding: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.participants-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e5ea;
+    color: #172235;
+    font-size: 13px;
+}
+
+.participants-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* Status badges */
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status-active {
+    background: #e4f7f1;
+    color: #008f64;
+}
+
+.status-inactive {
+    background: #edf2f8;
+    color: #6f7b8c;
+}
+
+/* Table actions */
+
+.action-btn {
+    border: none;
+    background: transparent;
+    color: #0b1f3a;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.action-btn:hover {
+    color: #01af7a;
+}
+
+/* Empty state */
+
+.table-empty-state {
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.table-empty-state h3 {
+    color: #0b1f3a;
+    font-size: 16px;
+    margin: 0 0 8px;
+}
+
+.table-empty-state p {
+    color: #6f7b8c;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Participant details dialog */
+
+.details-dialog {
+    width: min(500px, calc(100% - 40px));
+    padding: 25px;
+    border: 1px solid #e2e5ea;
+    background: #ffffff;
+    color: #172235;
+}
+
+.details-dialog::backdrop {
+    background: rgba(11, 31, 58, 0.55);
+}
+
+.dialog-heading {
+    border-bottom: 1px solid #e2e5ea;
+    padding-bottom: 15px;
+}
+
+/* Responsive design */
+
+@media (max-width: 900px) {
+    .participant-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .participants-page {
+        padding: 15px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .participant-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .participant-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}

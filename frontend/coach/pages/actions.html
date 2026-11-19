@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KBD | Action Management</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/actions.css">
+<link rel="stylesheet" href="../css/integration.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <div id="sidebar-container"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+
+            <div id="navbar-container"></div>
+
+            <main class="actions-page">
+
+                <!-- PAGE HEADING -->
+                <section class="page-heading">
+
+                    <div>
+                        <h1>Actions</h1>
+                        <p>
+                            Manage coaching commitments, participant tasks
+                            and follow-up activities.
+                        </p>
+                    </div>
+
+                    <button type="button"
+                        class="primary-btn"
+                        id="add-action-btn">
+                        + Create Action
+                    </button>
+
+                </section>
+
+
+                <!-- ACTION STATISTICS -->
+                <section class="action-stats">
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>Total Actions</span>
+                            <h2 id="total-actions">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>In Progress</span>
+                            <h2 id="in-progress-actions">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>Overdue</span>
+                            <h2 id="overdue-actions">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <span>Completed</span>
+                            <h2 id="completed-actions">0</h2>
+                        </div>
+                    </div>
+
+                    <!-- Temporary compatibility with old JS.
+                         This is hidden and is not a dashboard statistic. -->
+                    <span id="pending-actions" hidden></span>
+
+                </section>
+
+
+                <!-- CREATE / EDIT ACTION FORM -->
+                <section class="action-form-panel"
+                    id="action-form-panel"
+                    hidden>
+
+                    <div class="form-heading">
+
+                        <div>
+                            <h2 id="action-form-title">Create Action</h2>
+
+                            <p>
+                                Turn coaching discussions into clear,
+                                achievable commitments.
+                            </p>
+                        </div>
+
+                        <button type="button"
+                            class="close-btn"
+                            id="close-action-form"
+                            aria-label="Close form">
+                            &times;
+                        </button>
+
+                    </div>
+
+
+                    <form id="action-form">
+
+                        <div class="form-grid">
+
+                            <!-- ACTION TITLE -->
+                            <div class="form-group"><label for="action-programme">Programme</label><select id="action-programme" required><option value="">Select programme</option></select></div><div class="form-group">
+
+                                <label for="action-title">
+                                    Action Title *
+                                </label>
+
+                                <input type="text"
+                                    id="action-title"
+                                    name="title"
+                                    placeholder="e.g. Prepare an updated CV"
+                                    required>
+
+                            </div>
+
+
+                            <!-- RELATED PARTICIPANT -->
+                            <div class="form-group">
+
+                                <label for="action-participant">
+                                    Related Participant *
+                                </label>
+
+                                <select id="action-participant"
+                                    name="participantId"
+                                    required>
+
+                                    <option value="">
+                                        Select participant
+                                    </option>
+
+                                </select>
+
+                                <small>
+                                    Select the participant this action
+                                    relates to.
+                                </small>
+
+                            </div>
+
+
+                            <!-- ASSIGNMENT -->
+                            <div class="form-group">
+
+                                <label for="action-assignee-type">
+                                    Assign Action To *
+                                </label>
+
+                                <select id="action-assignee-type"
+                                    name="assignedTo"
+                                    required>
+
+                                    <option value="Participant">
+                                        Participant
+                                    </option>
+
+                                    <option value="Coach">
+                                        Coach
+                                    </option>
+
+                                </select>
+
+                                <small id="assignment-description">
+                                    The participant will be responsible
+                                    for completing this action.
+                                </small>
+
+                            </div>
+
+
+                            <!-- DUE DATE -->
+                            <div class="form-group">
+
+                                <label for="action-due-date">
+                                    Due Date *
+                                </label>
+
+                                <input type="date"
+                                    id="action-due-date"
+                                    name="dueDate"
+                                    required>
+
+                            </div>
+
+
+                            <!-- PRIORITY -->
+                            <div class="form-group">
+
+                                <label for="action-priority">
+                                    Priority
+                                </label>
+
+                                <select id="action-priority"
+                                    name="priority">
+
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                    <option value="High">High</option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- DESCRIPTION -->
+                            <div class="form-group full-width">
+
+                                <label for="action-description">
+                                    Instructions / Description *
+                                </label>
+
+                                <textarea id="action-description"
+                                    name="description"
+                                    rows="5"
+                                    placeholder="Explain what needs to be done, why it matters and what the expected outcome is..."
+                                    required></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Hidden default status.
+                             New actions will start as Not Started. -->
+                        <input type="hidden"
+                            id="action-status"
+                            name="status"
+                            value="Pending">
+
+
+                        <!-- FORM BUTTONS -->
+                        <div class="form-actions">
+
+                            <button type="button"
+                                class="secondary-btn"
+                                id="cancel-action-form">
+                                Cancel
+                            </button>
+
+                            <button type="submit"
+                                class="primary-btn"
+                                id="save-action-btn">
+                                Create Action
+                            </button>
+
+                        </div>
+
+
+                        <p id="action-form-message"
+                            class="form-message"
+                            role="status"
+                            aria-live="polite"></p>
+
+                    </form>
+
+                </section>
+
+
+                <!-- ACTION MANAGEMENT -->
+                <section class="actions-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2>Action Management</h2>
+
+                            <p>
+                                Track responsibilities and follow through
+                                on coaching commitments.
+                            </p>
+                        </div>
+
+                        <span id="action-results-count">0 actions</span>
+
+                    </div>
+
+
+                    <!-- CURRENT / PAST TABS -->
+                    <div class="action-view-tabs">
+
+                        <button type="button"
+                            class="action-tab active"
+                            id="action-view-current"
+                            data-action-view="current"
+                            aria-pressed="true">
+
+                            Current Actions
+
+                        </button>
+
+                        <button type="button"
+                            class="action-tab"
+                            id="action-view-past"
+                            data-action-view="past"
+                            aria-pressed="false">
+
+                            Past Actions
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- SEARCH AND FILTERS -->
+                    <div class="actions-toolbar">
+
+                        <div class="search-box">
+
+                            <input type="search"
+                                id="action-search"
+                                placeholder="Search actions or participants..."
+                                aria-label="Search actions">
+
+                        </div>
+
+
+                        <div class="filter-box">
+
+                            <select id="action-assignee-filter"
+                                aria-label="Filter by assignment">
+
+                                <option value="All">All Assignments</option>
+                                <option value="Participant">Participant</option>
+                                <option value="Coach">Coach</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filter-box">
+
+                            <select id="action-status-filter"
+                                aria-label="Filter by status">
+
+                                <option value="All">All Statuses</option>
+                                <option value="Pending">Not Started</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Cancelled">Cancelled</option>
+                                <option value="Overdue">Overdue</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filter-box">
+
+                            <select id="action-priority-filter"
+                                aria-label="Filter by priority">
+
+                                <option value="All">All Priorities</option>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ACTIONS TABLE -->
+                    <div class="table-container">
+
+                        <table class="actions-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Action</th>
+                                    <th>Participant</th>
+                                    <th>Assigned To</th>
+                                    <th>Due Date</th>
+                                    <th>Deadline</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="actions-table-body"></tbody>
+
+                        </table>
+
+
+                        <!-- EMPTY STATE -->
+                        <div class="empty-state"
+                            id="actions-empty-state">
+
+                            <h3>No actions yet</h3>
+
+                            <p>
+                                Create an action based on a coaching goal
+                                or an agreed commitment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- DEMONSTRATION ACTION SEED -->
+    
+
+
+    <!-- SHARED LAYOUT -->
+    <script type="module" src="../js/layout.js"></script>
+
+    <!-- ACTIONS FUNCTIONALITY -->
+    <script type="module" src="../js/page.js"></script>
+
+</body>
+</html>

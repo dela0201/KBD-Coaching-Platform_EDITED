@@ -1,0 +1,39 @@
+:root {
+    --kbd-green: #dfb55b;
+    --kbd-green-light: #efd394;
+    --kbd-soft-green: #fbf3df;
+}
+[hidden], .hidden { display: none !important; }
+.workspace-state { border: 1px solid #b85f39; background: #fff3e9; border-radius: 8px; margin: 20px; padding: 16px; }
+.workspace-state button { padding: 8px 14px; margin-top: 8px; }
+.workspace-list-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--kbd-border); }
+.table-action-btn { display: inline-block; margin: 3px; padding: 6px 10px; border: 1px solid var(--kbd-border); border-radius: 5px; background: white; color: var(--kbd-navy); }
+.form-message { overflow-wrap: anywhere; }
+#coach-menu-toggle { display: none; }
+#coach-navigation, #coach-footer { gap: 4px; }
+.stat-card, .stat-card-info { min-width: 0; }
+.stat-card h2 { overflow-wrap: anywhere; }
+input,select,textarea { max-width: 100%; }
+.message-row audio { max-width: 100%; }
+@media(max-width:700px) {
+    .app { flex-direction: column; }
+    .sidebar { display: block; width: 100%; min-height: 0; padding: 16px 20px; }
+    .brand { margin-bottom: 12px; }
+    #coach-menu-toggle { display: block; padding: 9px 15px; background: transparent; border: 1px solid #dfb55b; color: white; border-radius: 8px; }
+    .sidebar:not(.menu-open) .navigation, .sidebar:not(.menu-open) .sidebar-bottom { display: none; }
+    #coach-navigation { margin-top: 12px; }
+    #coach-footer { margin-top: 8px; }
+    .topbar { flex-wrap: wrap; gap: 12px; }
+    main { padding: 20px !important; }
+    .form-grid { grid-template-columns: 1fr !important; }
+    .page-heading { flex-wrap: wrap; gap: 16px; }
+}
+@media print {
+    .sidebar,.topbar,.report-options,.report-form-panel,.page-heading,#report-form,.report-actions,#report-message { display: none !important; }
+    .app,.main-content { display: block; width: 100%; }
+    .reports-page { padding: 0 !important; }
+    .report-table-wrapper { overflow: visible; }
+    .report-table { width: 100%; }
+}
+
+@media print { .report-generator { display:none !important; } }
